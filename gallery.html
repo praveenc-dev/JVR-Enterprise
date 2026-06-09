@@ -1,248 +1,882 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Gallery — JVR Enterprises | Granite Slabs, Quarry & Products</title>
-  <meta name="description" content="Browse JVR Enterprises' granite gallery — Cosmic White, White Namibe, Luna Quartzite, Kuroca Gold, Blue in the Night slabs, granite columns, lanterns, and quarry operations."/>
-  <meta name="keywords" content="granite gallery India, Cosmic White granite, Kuroca Gold, Blue in the Night, Luna Quartzite, granite columns Madurai"/>
-  <meta name="robots" content="index, follow"/><link rel="canonical" href="https://www.jvrenterprises.in/gallery.html"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="description"
+    content="Browse JVR Enterprises' granite gallery — Cosmic White, White Namibe, Luna Quartzite, Kuroca Gold, Blue in the Night slabs, granite columns, lanterns, and quarry operations." />
+  <meta name="keywords"
+    content="granite gallery India, Cosmic White granite, Kuroca Gold, Blue in the Night, Luna Quartzite, granite columns Madurai" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.jvrenterprises.in/gallery.html" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:2000;align-items:center;justify-content:center;padding:20px;}
-    .lightbox.active{display:flex;}
-    .lightbox-inner{max-width:900px;width:100%;position:relative;text-align:center;}
-    .lightbox-inner img{max-height:80vh;width:100%;object-fit:contain;}
-    .lightbox-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;margin-top:12px;}
-    .lightbox-cat{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-light);margin-top:6px;}
-    .lightbox-close{position:absolute;top:-46px;right:0;background:none;border:1px solid rgba(255,255,255,0.3);color:#fff;width:38px;height:38px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.3s;}
-    .lightbox-close:hover{background:var(--accent);border-color:var(--accent);}
-    .gallery-item{cursor:pointer;}
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .lightbox-inner img {
+      max-height: 80vh;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    .lightbox-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-top: 12px;
+    }
+
+    .lightbox-cat {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-top: 6px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .gallery-item {
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
-<nav class="navbar-jvr" id="navbar">
-  <div class="container d-flex align-items-center justify-content-between">
-    <a href="index.html" class="navbar-brand-jvr">
-      <div class="brand-logo-box"><span>JVR</span></div>
-      <div><div class="brand-name">JVR Enterprises</div><span class="brand-sub">Granite Exports & Contractors</span></div>
-    </a>
-    <button class="navbar-toggler-jvr d-md-none" id="navToggle"><span></span><span></span><span></span></button>
-    <div class="d-none d-md-flex align-items-center gap-1">
-      <a href="index.html" class="nav-link-jvr">Home</a><a href="about.html" class="nav-link-jvr">About</a>
-      <a href="services.html" class="nav-link-jvr">Services</a><a href="gallery.html" class="nav-link-jvr active">Gallery</a>
-      <a href="contact.html" class="nav-link-jvr">Contact</a><a href="contact.html" class="btn-gold ms-3">Get a Quote</a>
-    </div>
-  </div>
-  <div id="mobileMenu" style="display:none;background:#fff;border-top:1px solid var(--border);padding:20px;text-align:center;">
-    <a href="index.html" class="nav-link-jvr d-block py-2">Home</a><a href="about.html" class="nav-link-jvr d-block py-2">About</a>
-    <a href="services.html" class="nav-link-jvr d-block py-2">Services</a><a href="gallery.html" class="nav-link-jvr d-block py-2">Gallery</a>
-    <a href="contact.html" class="nav-link-jvr d-block py-2">Contact</a><a href="contact.html" class="btn-gold mt-3 d-inline-block">Get a Quote</a>
-  </div>
-</nav>
-
-<section class="page-hero">
-  <div class="container">
-    <span class="section-label">Our Products & Works</span>
-    <h1>Our <span class="accent-text">Gallery</span></h1>
-    <p>Premium granite varieties, finished products, and quarry operations.</p>
-    <ul class="breadcrumb-jvr mt-3"><li><a href="index.html">Home</a></li><li>Gallery</li></ul>
-  </div>
-</section>
-
-<section class="section-pad" style="background:var(--bg-secondary);">
-  <div class="container">
-    <div class="d-flex flex-wrap gap-2 justify-content-center mb-5">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="slabs">Granite Slabs</button>
-      <button class="filter-btn" data-filter="products">Finished Products</button>
-      <button class="filter-btn" data-filter="quarry">Quarry Operations</button>
-    </div>
-    <div class="row g-3" id="galleryGrid">
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/black-cosmic.jpg','Black Cosmic','Granite Slab')">
-          <img src="images/gallery/black-cosmic.jpg" alt="Black Cosmic granite slab JVR Enterprises Madurai" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Granite Slab</span><h5>Black Cosmic</h5></div></div>
+  <nav class="navbar-jvr" id="navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-jvr">
+        <div class="brand-logo-box"><span>JVR</span></div>
+        <div>
+          <div class="brand-name">JVR Enterprises</div><span class="brand-sub">Granite Exports & Contractors</span>
         </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/black-white-wave.jpg','Black & White Wave','Granite Slab')">
-          <img src="images/gallery/black-white-wave.jpg" alt="Black White Wave granite slab" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Granite Slab</span><h5>Black & White Wave</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/cosmic-white.jpg','Cosmic White','Granite Slab')">
-          <img src="images/gallery/cosmic-white.jpg" alt="Cosmic White granite slab JVR" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Granite Slab</span><h5>Cosmic White</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/white-namibe.jpg','White Namibe','Granite Slab')">
-          <img src="images/gallery/white-namibe.jpg" alt="White Namibe granite slab JVR" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Granite Slab</span><h5>White Namibe</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/kuroca-gold.jpg','Kuroca Gold','Granite Slab')">
-          <img src="images/gallery/kuroca-gold.jpg" alt="Kuroca Gold granite slab JVR Enterprises" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Granite Slab</span><h5>Kuroca Gold</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/luna-quartzite.jpg','Luna Quartzite','Quartzite Slab')">
-          <img src="images/gallery/luna-quartzite.jpg" alt="Luna Quartzite slab JVR Enterprises" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Quartzite Slab</span><h5>Luna Quartzite</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/blue-in-the-night.jpg','Blue in the Night','Granite Slab')">
-          <img src="images/gallery/blue-in-the-night.jpg" alt="Blue in the Night granite slab" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Granite Slab</span><h5>Blue in the Night</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/teakwood-tiles.jpg','Yellow Teakwood','Sandstone Tiles')">
-          <img src="images/gallery/teakwood-tiles.jpg" alt="Yellow Teakwood sandstone tiles JVR" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Sandstone Tiles</span><h5>Yellow Teakwood</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/warehouse.jpg','Warehouse Stock','Processed Slabs')">
-          <img src="images/gallery/warehouse.jpg" alt="JVR Enterprises granite warehouse Madurai" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Processed Slabs</span><h5>Warehouse Stock</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/slab-grey.jpg','Grey Granite Slab','Granite Slab')">
-          <img src="images/gallery/slab-grey.jpg" alt="Grey granite slab JVR Enterprises" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Granite Slab</span><h5>Grey Granite Slab</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="products">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/granite-column.jpg','Granite Column','Finished Product')">
-          <img src="images/gallery/granite-column.jpg" alt="Custom granite pillar column JVR Enterprises Madurai" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Finished Product</span><h5>Granite Column</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="products">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/granite-lantern.jpg','Granite Lanterns','Finished Product')">
-          <img src="images/gallery/granite-lantern.jpg" alt="Decorative granite lanterns JVR Enterprises" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Finished Product</span><h5>Granite Lanterns</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/quarry-black.jpg','Black Granite Quarry','Quarry Operations')">
-          <img src="images/gallery/quarry-black.jpg" alt="Black granite quarry operations JVR Tamil Nadu" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Quarry Operations</span><h5>Black Granite Quarry</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/quarry-white.jpg','White Granite Quarry','Quarry Operations')">
-          <img src="images/gallery/quarry-white.jpg" alt="White granite quarry blocks Tamil Nadu JVR" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Quarry Operations</span><h5>White Granite Quarry</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/quarry-white-blocks.jpg','Granite Blocks','Quarry Operations')">
-          <img src="images/gallery/quarry-white-blocks.jpg" alt="White granite blocks quarry site JVR" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Quarry Operations</span><h5>Granite Blocks</h5></div></div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
-        <div class="gallery-item" onclick="openLightbox('images/gallery/quarry-extraction.jpg','Granite Extraction','Quarry Operations')">
-          <img src="images/gallery/quarry-extraction.jpg" alt="Granite extraction operations JVR Tamil Nadu" style="width:100%;height:260px;object-fit:cover;"/>
-          <div class="gallery-overlay"><div><span>Quarry Operations</span><h5>Granite Extraction</h5></div></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="text-center mt-5 pt-4" style="border-top:1px solid var(--border);">
-      <p style="margin-bottom:22px;">Interested in any of our granite varieties? Contact us for pricing and availability.</p>
-      <a href="contact.html" class="btn-gold me-3">Send Enquiry</a>
-      <a href="tel:+919894760944" class="btn-outline-gold"><i class="fa fa-phone me-2"></i>Call Now</a>
-    </div>
-  </div>
-</section>
-
-<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox()"><i class="fa fa-times"></i></button>
-    <img id="lightboxImg" src="" alt=""/>
-    <div class="lightbox-cat" id="lightboxCat"></div>
-    <div class="lightbox-title" id="lightboxTitle"></div>
-  </div>
-</div>
-
-<footer class="footer-jvr">
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-4">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <div class="brand-logo-box"><span>JVR</span></div>
-          <div><div class="brand-name-footer">JVR Enterprises</div><span class="brand-sub">Granite Exports & Contractors</span></div>
-        </div>
-        <p style="max-width:290px;line-height:1.8;">Premium granite exports, quarry operations and engineering services from Madurai, Tamil Nadu.</p>
-      </div>
-      <div class="col-md-4 col-lg-2"><h5>Navigation</h5>
-        <a href="index.html" class="footer-link">Home</a><a href="about.html" class="footer-link">About Us</a>
-        <a href="services.html" class="footer-link">Services</a><a href="gallery.html" class="footer-link">Gallery</a><a href="contact.html" class="footer-link">Contact</a>
-      </div>
-      <div class="col-md-4 col-lg-3"><h5>Services</h5>
-        <a href="services.html" class="footer-link">Granite Exports</a><a href="services.html" class="footer-link">Engineering & Govt. Contractors</a>
-        <a href="services.html" class="footer-link">Environmental Clearance</a><a href="services.html" class="footer-link">Quarry Licencing</a>
-      </div>
-      <div class="col-md-4 col-lg-3"><h5>Contact Info</h5>
-        <p style="font-size:0.84rem;margin-bottom:8px;"><i class="fa fa-map-marker-alt me-2" style="color:var(--accent-light);"></i>Plot No: 253/113, PT Rajan Road, Visalakshipuram, Madurai 625014</p>
-        <p style="font-size:0.84rem;margin-bottom:6px;"><i class="fa fa-phone me-2" style="color:var(--accent-light);"></i>+91 98947 60944</p>
-        <p style="font-size:0.84rem;"><i class="fa fa-phone me-2" style="color:var(--accent-light);"></i>+91 91592 23333</p>
+      </a>
+      <button class="navbar-toggler-jvr d-md-none" id="navToggle"><span></span><span></span><span></span></button>
+      <div class="d-none d-md-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-jvr">Home</a><a href="about.html" class="nav-link-jvr">About</a>
+        <a href="services.html" class="nav-link-jvr">Services</a><a href="gallery.html"
+          class="nav-link-jvr active">Gallery</a>
+        <a href="contact.html" class="nav-link-jvr">Contact</a><a href="contact.html" class="btn-gold ms-3">Get a
+          Quote</a>
       </div>
     </div>
-    <hr class="footer-divider"/>
-    <div class="d-flex flex-wrap justify-content-between footer-bottom">
-      <p class="mb-0">&copy; 2025 JVR Enterprises. All rights reserved.</p>
-      <p class="mb-0">Designed with <span style="color:var(--accent-light);">♦</span> for excellence</p>
+    <div id="mobileMenu"
+      style="display:none;background:#fff;border-top:1px solid var(--border);padding:20px;text-align:center;">
+      <a href="index.html" class="nav-link-jvr d-block py-2">Home</a><a href="about.html"
+        class="nav-link-jvr d-block py-2">About</a>
+      <a href="services.html" class="nav-link-jvr d-block py-2">Services</a><a href="gallery.html"
+        class="nav-link-jvr d-block py-2">Gallery</a>
+      <a href="contact.html" class="nav-link-jvr d-block py-2">Contact</a><a href="contact.html"
+        class="btn-gold mt-3 d-inline-block">Get a Quote</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Our Products & Works</span>
+      <h1>Our <span class="accent-text">Gallery</span></h1>
+      <p>Premium granite varieties, finished products, and quarry operations.</p>
+      <ul class="breadcrumb-jvr mt-3">
+        <li><a href="index.html">Home</a></li>
+        <li>Gallery</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-pad" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="d-flex flex-wrap gap-2 justify-content-center mb-5">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="slabs">Granite Slabs</button>
+        <button class="filter-btn" data-filter="products">Finished Products</button>
+        <button class="filter-btn" data-filter="quarry">Quarry Operations</button>
+      </div>
+      <div class="row g-3" id="galleryGrid">
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 001.jpg','Black Cosmic','Granite Slab')">
+            <img src="images/JVR - Images/JVR - 001.jpg" alt="Black Cosmic granite slab JVR Enterprises Madurai"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Granite Slab</span>
+                <h5>JVR - 001</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 002.jpg','Black & White Wave','Granite Slab')">
+            <img src="images/JVR - Images/JVR - 002.jpg" alt="Black White Wave granite slab"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Granite Slab</span>
+                <h5>JVR - 002</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 003.jpg','Cosmic White','Granite Slab')">
+            <img src="images/JVR - Images/JVR - 003.jpg" alt="Cosmic White granite slab JVR"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Granite Slab</span>
+                <h5>JVR - 003</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 004.jpg','White Namibe','Granite Slab')">
+            <img src="images/JVR - Images/JVR - 004.jpg" alt="White Namibe granite slab JVR"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Granite Slab</span>
+                <h5>JVR - 004</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 005.jpg','Kuroca Gold','Granite Slab')">
+            <img src="images/JVR - Images/JVR - 005.jpg" alt="Kuroca Gold granite slab JVR Enterprises"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Granite Slab</span>
+                <h5>JVR - 005</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 006.jpg','Luna Quartzite','Quartzite Slab')">
+            <img src="images/JVR - Images/JVR - 006.jpg" alt="Luna Quartzite slab JVR Enterprises"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quartzite Slab</span>
+                <h5>JVR - 006</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 007.jpg','Blue in the Night','Granite Slab')">
+            <img src="images/JVR - Images/JVR - 007.jpg" alt="Blue in the Night granite slab"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Granite Slab</span>
+                <h5>JVR - 007</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 008.jpg','Yellow Teakwood','Sandstone Tiles')">
+            <img src="images/JVR - Images/JVR - 008.jpg" alt="Yellow Teakwood sandstone tiles JVR"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Sandstone Tiles</span>
+                <h5>JVR - 008</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 009.jpg','Warehouse Stock','Processed Slabs')">
+            <img src="images/JVR - Images/JVR - 009.jpg" alt="JVR Enterprises granite warehouse Madurai"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Processed Slabs</span>
+                <h5>JVR - 009</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="slabs">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 010.jpg','Grey Granite Slab','Granite Slab')">
+            <img src="images/JVR - Images/JVR - 010.jpg" alt="Grey granite slab JVR Enterprises"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Granite Slab</span>
+                <h5>JVR - 010</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="products">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 011.jpg','Granite Column','Finished Product')">
+            <img src="images/JVR - Images/JVR - 011.jpg" alt="Custom granite pillar column JVR Enterprises Madurai"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Finished Product</span>
+                <h5>JVR - 011</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="products">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 012.jpg','Granite Lanterns','Finished Product')">
+            <img src="images/JVR - Images/JVR - 012.jpg" alt="Decorative granite lanterns JVR Enterprises"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Finished Product</span>
+                <h5>JVR - 012</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 013.jpg','Black Granite Quarry','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 013.jpg" alt="Black granite quarry operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 013</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 014.jpg','White Granite Quarry','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 014.jpg" alt="White granite quarry blocks Tamil Nadu JVR"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 014</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 015.jpg','Granite Blocks','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 015.jpg" alt="White granite blocks quarry site JVR"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 015</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 016.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 016.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 016</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 017.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 017.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 017</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 018.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 018.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 018</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 019.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 019.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 019</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 020.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 020.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 020</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 021.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 021.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 021</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 022.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 022.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 022</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 023.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 023.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 023</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 024.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 024.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 024</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 025.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 025.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 025</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 026.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 026.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 026</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 027.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 027.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 027</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 028.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 028.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 028</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 029.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 029.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 029</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 030.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 030.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 030</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 031.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 031.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 031</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 032.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 032.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 032</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 033.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 033.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 033</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 034.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 034.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 034</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 035.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 035.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 035</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 036.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 036.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 036</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 037.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 037.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 037</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 038.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 038.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 038</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 039.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 039.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 039</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 040.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 040.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 040</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 041.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 041.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 041</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 042.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 042.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 042</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 043.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 043.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 043</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 044.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 044.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 044</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 045.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 045.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 045</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 046.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 046.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 046</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 047.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 047.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 047</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 048.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 048.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 048</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 049.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 049.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 049</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-col" data-cat="quarry">
+          <div class="gallery-item"
+            onclick="openLightbox('images/JVR - Images/JVR - 050.jpg','Granite Extraction','Quarry Operations')">
+            <img src="images/JVR - Images/JVR - 050.jpg" alt="Granite extraction operations JVR Tamil Nadu"
+              style="width:100%;height:260px;object-fit:cover;" />
+            <div class="gallery-overlay">
+              <div><span>Quarry Operations</span>
+                <h5>JVR - 050</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="text-center mt-5 pt-4" style="border-top:1px solid var(--border);">
+        <p style="margin-bottom:22px;">Interested in any of our granite varieties? Contact us for pricing and
+          availability.</p>
+        <a href="contact.html" class="btn-gold me-3">Send Enquiry</a>
+        <a href="tel:+919894760944" class="btn-outline-gold"><i class="fa fa-phone me-2"></i>Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightbox()"><i class="fa fa-times"></i></button>
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-cat" id="lightboxCat"></div>
+      <div class="lightbox-title" id="lightboxTitle"></div>
     </div>
   </div>
-</footer>
-<a href="https://wa.me/919894760944" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
-  document.getElementById('navToggle').addEventListener('click',()=>{const m=document.getElementById('mobileMenu');m.style.display=m.style.display==='block'?'none':'block';});
-  document.querySelectorAll('.filter-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const f=btn.dataset.filter;
-      document.querySelectorAll('.gallery-col').forEach(col=>{col.style.display=(f==='all'||col.dataset.cat===f)?'block':'none';});
+
+  <footer class="footer-jvr">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div class="brand-logo-box"><span>JVR</span></div>
+            <div>
+              <div class="brand-name-footer">JVR Enterprises</div><span class="brand-sub">Granite Exports &
+                Contractors</span>
+            </div>
+          </div>
+          <p style="max-width:290px;line-height:1.8;">Premium granite exports, quarry operations and engineering
+            services from Madurai, Tamil Nadu.</p>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h5>Navigation</h5>
+          <a href="index.html" class="footer-link">Home</a><a href="about.html" class="footer-link">About Us</a>
+          <a href="services.html" class="footer-link">Services</a><a href="gallery.html"
+            class="footer-link">Gallery</a><a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5>Services</h5>
+          <a href="services.html" class="footer-link">Granite Exports</a><a href="services.html"
+            class="footer-link">Engineering & Govt. Contractors</a>
+          <a href="services.html" class="footer-link">Environmental Clearance</a><a href="services.html"
+            class="footer-link">Quarry Licencing</a>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5>Contact Info</h5>
+          <p style="font-size:0.84rem;margin-bottom:8px;"><i class="fa fa-map-marker-alt me-2"
+              style="color:var(--accent-light);"></i>Plot No: 253/113, PT Rajan Road, Visalakshipuram, Madurai 625014
+          </p>
+          <p style="font-size:0.84rem;margin-bottom:6px;"><i class="fa fa-phone me-2"
+              style="color:var(--accent-light);"></i>+91 98947 60944</p>
+          <p style="font-size:0.84rem;"><i class="fa fa-phone me-2" style="color:var(--accent-light);"></i>+91 91592
+            23333</p>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="d-flex flex-wrap justify-content-between footer-bottom">
+        <p class="mb-0">&copy; 2025 JVR Enterprises. All rights reserved.</p>
+        <p class="mb-0">Designed with <span style="color:var(--accent-light);">♦</span> for excellence</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/919894760944" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
+    document.getElementById('navToggle').addEventListener('click', () => { const m = document.getElementById('mobileMenu'); m.style.display = m.style.display === 'block' ? 'none' : 'block'; });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.gallery-col').forEach(col => { col.style.display = (f === 'all' || col.dataset.cat === f) ? 'block' : 'none'; });
+      });
     });
-  });
-  function openLightbox(src,title,cat){
-    document.getElementById('lightboxImg').src=src;
-    document.getElementById('lightboxTitle').textContent=title;
-    document.getElementById('lightboxCat').textContent=cat;
-    document.getElementById('lightbox').classList.add('active');
-    document.body.style.overflow='hidden';
-  }
-  function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
-</script>
-</body></html>
+    function openLightbox(src, title, cat) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxTitle').textContent = title;
+      document.getElementById('lightboxCat').textContent = cat;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+
+</html>

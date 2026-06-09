@@ -209,19 +209,19 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label>Your Name *</label>
-                  <input type="text" id="fname" class="form-control" placeholder="Er. John Smith" required />
+                  <input type="text" id="fname" name="fname" class="form-control" placeholder="Er. John Smith" required />
                 </div>
                 <div class="col-md-6">
                   <label>Phone Number *</label>
-                  <input type="tel" id="fphone" class="form-control" placeholder="+91 98765 43210" required />
+                  <input type="tel" id="fphone" name="fphone" class="form-control" placeholder="+91 98765 43210" required />
                 </div>
                 <div class="col-12">
                   <label>Email Address</label>
-                  <input type="email" id="femail" class="form-control" placeholder="yourname@example.com" />
+                  <input type="email" id="femail" name="femail"  class="form-control" placeholder="yourname@example.com" />
                 </div>
                 <div class="col-md-6">
                   <label>Service Required</label>
-                  <select id="fservice"
+                  <select id="fservice" name="fservice"   
                     style="background:var(--bg-primary);border:1px solid var(--border);color:var(--text-primary);border-radius:0;padding:12px 16px;width:100%;font-family:'Jost',sans-serif;font-size:0.9rem;appearance:none;cursor:pointer;transition:border-color 0.3s;"
                     onfocus="this.style.borderColor='var(--accent-light)'"
                     onblur="this.style.borderColor='var(--border)'">
@@ -235,7 +235,7 @@
                 </div>
                 <div class="col-md-6">
                   <label>Granite Type</label>
-                  <select id="fgranite"
+                  <select id="fgranite" name="fgranite"
                     style="background:var(--bg-primary);border:1px solid var(--border);color:var(--text-primary);border-radius:0;padding:12px 16px;width:100%;font-family:'Jost',sans-serif;font-size:0.9rem;appearance:none;cursor:pointer;transition:border-color 0.3s;"
                     onfocus="this.style.borderColor='var(--accent-light)'"
                     onblur="this.style.borderColor='var(--border)'">
@@ -252,7 +252,7 @@
                 </div>
                 <div class="col-12">
                   <label>Message / Requirements *</label>
-                  <textarea id="fmessage" class="form-control" rows="5"
+                  <textarea id="fmessage" name="fmessage" class="form-control" rows="5"
                     placeholder="Tell us about your project — quantity, dimensions, delivery location, timeline..."
                     required style="resize:vertical;"></textarea>
                 </div>
@@ -361,7 +361,7 @@
   <a href="https://wa.me/919894760944" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+  <!-- <script>
     window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
     document.getElementById('navToggle').addEventListener('click', () => { const m = document.getElementById('mobileMenu'); m.style.display = m.style.display === 'block' ? 'none' : 'block'; });
 
@@ -384,7 +384,81 @@
       this.reset();
       setTimeout(() => { document.getElementById('successMsg').style.display = 'none'; }, 6000);
     });
-  </script>
+  </script> -->
 </body>
+
+
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+
+  e.preventDefault();
+
+  const form = this;
+  const formData = new FormData(form);
+
+
+  // ✅ WhatsApp Message
+  const message =
+`New Granite Enquiry
+
+Name: ${formData.get("fname")}
+Phone: ${formData.get("fphone")}
+Email: ${formData.get("femail")}
+
+Service:
+${formData.get("fservice")}
+
+Granite Type:
+${formData.get("fgranite")}
+
+Message:
+${formData.get("fmessage")}`;
+
+
+  // ✅ WhatsApp Open
+  window.open(
+    `https://wa.me/919943910452?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+
+
+
+  // ✅ AJAX MAIL SEND
+  fetch("https://formsubmit.co/ajax/rekhachandran75@gmail.com", {
+
+    method: "POST",
+
+    headers: {
+      "Accept": "application/json"
+    },
+
+    body: formData
+
+  })
+
+
+  .then(response => response.json())
+
+
+  .then(data => {
+
+    document.getElementById("successMsg").style.display = "block";
+
+    form.reset();
+
+  })
+
+
+  .catch(error => {
+
+    alert("Something went wrong!");
+
+  });
+
+
+});
+
+</script>
 
 </html>
